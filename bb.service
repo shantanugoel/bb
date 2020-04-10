@@ -1,0 +1,16 @@
+[Unit]
+Description=BB Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=shantanu
+ExecStart=/home/shantanu/bb/bb.sh
+StandardOutput=append:/home/shantanu/bb/log.txt
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
